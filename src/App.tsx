@@ -1,10 +1,16 @@
 import "./App.scss";
 import React from "react";
-import Dashboard from "./Dashboard";
-import ToDoList from "./ToDoList";
+import Dashboard from "./components/Dashboard";
+import ToDoList from "./components/ToDoList";
+
+const AppStyle: React.CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+};
 
 const App: React.FC = () => (
-  <div className="App">
+  <div style={AppStyle}>
     <Dashboard />
     <ToDoList />
   </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppSelector } from "./app/hooks";
+import { useAppSelector } from "../app/hooks";
 
 const Dashboard: React.FC = () => {
   const completedTasks = useAppSelector(
@@ -10,8 +10,8 @@ const Dashboard: React.FC = () => {
   );
   return (
     <div>
-      <h1>Number of completed tasks: {completedTasks}</h1>
-      <h1>Number of uncompleted tasks: {uncompletedTasks}</h1>
+      <h2>Number of completed tasks: {completedTasks}</h2>
+      <h2>Number of uncompleted tasks: {uncompletedTasks}</h2>
     </div>
   );
 };
