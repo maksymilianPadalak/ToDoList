@@ -3,6 +3,7 @@ import { useAppDispatch } from "../app/hooks";
 import { incrementedCompletedTasks } from "../features/tasksCounter/completed-tasks-counter-slice";
 import { incrementedUncompletedTasks } from "../features/tasksCounter/uncompleted-tasks-counter-slice";
 import { Button } from "@mui/material";
+import { ToDoItem } from "../features/toDoList/to-do-list-slice";
 
 const ToDoListItemBody: React.CSSProperties = {
   display: "flex",
@@ -15,7 +16,11 @@ const ToDoListButtons: React.CSSProperties = {
   marginInline: "10px",
 };
 
-const ToListItem: React.FC = () => {
+interface Props {
+  toDoItem: ToDoItem;
+}
+
+const ToListItem: React.FC<Props> = ({ toDoItem }) => {
   const dispatch = useAppDispatch();
 
   const handleCompleteTaskClick = () => {
@@ -29,7 +34,7 @@ const ToListItem: React.FC = () => {
   return (
     <div>
       <div style={ToDoListItemBody}>
-        <h3>Zrób zakupy</h3>
+        <h3>{toDoItem.name}</h3>
         <div>
           <Button
             variant={"contained"}
