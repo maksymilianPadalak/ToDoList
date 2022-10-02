@@ -1,12 +1,12 @@
 import React from "react";
 import { useAppDispatch } from "../app/hooks";
-import { incrementedCompletedTasks } from "../features/tasksCounter/completed-tasks-counter-slice";
-import { incrementedUncompletedTasks } from "../features/tasksCounter/uncompleted-tasks-counter-slice";
+import { incrementedCompletedTasks } from "../features/tasks-counter/completed-tasks-counter-slice";
+import { incrementedUncompletedTasks } from "../features/tasks-counter/uncompleted-tasks-counter-slice";
 import { Button } from "@mui/material";
 import {
   finishedTask,
   ToDoListItemWithUuid,
-} from "../features/toDoList/to-do-list-slice";
+} from "../features/to-do-list/to-do-list-slice";
 
 const ToDoListItem: React.CSSProperties = {
   display: "grid",

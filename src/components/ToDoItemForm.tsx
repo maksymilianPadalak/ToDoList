@@ -3,7 +3,7 @@ import { Button, Input } from "@mui/material";
 import {
   addedToDoListItem,
   ToDoItem,
-} from "../features/toDoList/to-do-list-slice";
+} from "../features/to-do-list/to-do-list-slice";
 import { useAppDispatch } from "../app/hooks";
 
 const TaskFormStyle: React.CSSProperties = {
