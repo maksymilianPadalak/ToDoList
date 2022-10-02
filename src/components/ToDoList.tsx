@@ -38,7 +38,7 @@ const ToDoList: React.FC = () => {
     <div style={ToDoListWrapperStyle}>
       <Input
         placeholder={"Please enter the name"}
-        value={toDoListItem?.name}
+        value={toDoListItem?.name ?? ""}
         onChange={handleTaskNameChange}
       />
 
