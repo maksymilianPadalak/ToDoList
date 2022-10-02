@@ -7,8 +7,15 @@ import {
 } from "../features/toDoList/to-do-list-slice";
 import ToDoListItem from "./ToDoListItem";
 
-const ToDoListStyle: React.CSSProperties = {
+const ToDoListWrapperStyle: React.CSSProperties = {
   width: "80%",
+};
+
+const ToDoListStyle: React.CSSProperties = {
+  width: "100%",
+  height: "500px",
+  overflow: "scroll",
+  marginTop: "50px",
 };
 
 const ToDoList: React.FC = () => {
@@ -28,19 +35,20 @@ const ToDoList: React.FC = () => {
   };
 
   return (
-    <div style={ToDoListStyle}>
-      <div>
-        {toDoListItems.map((item) => {
-          return <ToDoListItem toDoItem={item} key={item.uuid} />;
-        })}
-      </div>
-
+    <div style={ToDoListWrapperStyle}>
       <Input
         placeholder={"Please enter the name"}
         value={toDoListItem?.name}
         onChange={handleTaskNameChange}
       />
+
       <Button onClick={handleAddToDoListItemClick}>Add ToDo List item</Button>
+
+      <div style={ToDoListStyle}>
+        {toDoListItems.map((item) => (
+          <ToDoListItem toDoItem={item} key={item.uuid} />
+        ))}
+      </div>
     </div>
   );
 };

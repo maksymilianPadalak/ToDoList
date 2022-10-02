@@ -11,7 +11,7 @@ const Dashboard: React.FC = () => {
   return (
     <div>
       <h2>Number of completed tasks: {completedTasks}</h2>
-      <h2>Number of uncompleted tasks: {uncompletedTasks}</h2>
+      <h2>Number of abandoned tasks: {uncompletedTasks}</h2>
     </div>
   );
 };
