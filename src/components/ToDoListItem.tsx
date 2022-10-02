@@ -3,7 +3,10 @@ import { useAppDispatch } from "../app/hooks";
 import { incrementedCompletedTasks } from "../features/tasksCounter/completed-tasks-counter-slice";
 import { incrementedUncompletedTasks } from "../features/tasksCounter/uncompleted-tasks-counter-slice";
 import { Button } from "@mui/material";
-import { ToDoItem } from "../features/toDoList/to-do-list-slice";
+import {
+  finishedTask,
+  ToDoListItemWithUuid,
+} from "../features/toDoList/to-do-list-slice";
 
 const ToDoListItemBody: React.CSSProperties = {
   display: "flex",
@@ -17,17 +20,19 @@ const ToDoListButtons: React.CSSProperties = {
 };
 
 interface Props {
-  toDoItem: ToDoItem;
+  toDoItem: ToDoListItemWithUuid;
 }
 
 const ToListItem: React.FC<Props> = ({ toDoItem }) => {
   const dispatch = useAppDispatch();
 
   const handleCompleteTaskClick = () => {
+    dispatch(finishedTask(toDoItem.uuid));
     dispatch(incrementedCompletedTasks());
   };
 
   const handleAbandonTask = () => {
+    dispatch(finishedTask(toDoItem.uuid));
     dispatch(incrementedUncompletedTasks());
   };
 

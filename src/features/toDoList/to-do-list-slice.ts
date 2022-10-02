@@ -5,7 +5,7 @@ export interface ToDoItem {
   name: string;
 }
 
-interface ToDoListItemWithUuid extends ToDoItem {
+export interface ToDoListItemWithUuid extends ToDoItem {
   uuid: string;
 }
 
@@ -24,9 +24,12 @@ const toDoListItemsSlice = createSlice({
     addedToDoListItem(state, action: PayloadAction<ToDoItem>) {
       state.value.push({ ...action.payload, uuid: uuidv4() });
     },
+    finishedTask(state, action: PayloadAction<string>) {
+      state.value = state.value.filter((task) => task.uuid !== action.payload);
+    },
   },
 });
 
-export const { addedToDoListItem } = toDoListItemsSlice.actions;
+export const { addedToDoListItem, finishedTask } = toDoListItemsSlice.actions;
 
 export default toDoListItemsSlice.reducer;
