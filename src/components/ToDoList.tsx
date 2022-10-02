@@ -27,6 +27,7 @@ const ToDoList: React.FC = () => {
   const handleAddToDoListItemClick = () => {
     if (toDoListItem != null) {
       dispatch(addedToDoListItem(toDoListItem));
+      setToDoListItem(undefined);
     }
   };
 
