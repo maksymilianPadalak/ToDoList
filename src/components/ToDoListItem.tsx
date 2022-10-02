@@ -8,10 +8,14 @@ import {
   ToDoListItemWithUuid,
 } from "../features/toDoList/to-do-list-slice";
 
-const ToDoListItemBody: React.CSSProperties = {
+const ToDoListItem: React.CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+};
+
+const ToDoListItemGridFragment: React.CSSProperties = {
   display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-around",
+  justifyContent: "center",
   alignItems: "center",
 };
 
@@ -38,9 +42,12 @@ const ToListItem: React.FC<Props> = ({ toDoItem }) => {
 
   return (
     <div>
-      <div style={ToDoListItemBody}>
-        <h3>{toDoItem.name}</h3>
-        <div>
+      <div style={ToDoListItem}>
+        <div style={ToDoListItemGridFragment}>
+          <h3>{toDoItem.name}</h3>
+        </div>
+
+        <div style={ToDoListItemGridFragment}>
           <Button
             variant={"contained"}
             color={"success"}
