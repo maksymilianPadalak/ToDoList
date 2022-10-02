@@ -31,7 +31,7 @@ const ToDoList: React.FC = () => {
     <div style={ToDoListStyle}>
       <div>
         {toDoListItems.map((item) => {
-          return <ToDoListItem toDoItem={item} key={item.name} />;
+          return <ToDoListItem toDoItem={item} key={item.uuid} />;
         })}
       </div>
 
