@@ -10,7 +10,6 @@ const ToDoListWrapperStyle: React.CSSProperties = {
 const ToDoListStyle: React.CSSProperties = {
   width: "100%",
   height: "500px",
-  overflow: "scroll",
   marginTop: "50px",
 };
 
