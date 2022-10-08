@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Input } from "@mui/material";
+import { Button } from "@mui/material";
 import { addToDoListItem, ToDoItem } from "../features/toDoList/toDoListSlice";
 import { useAppDispatch } from "../app/hooks";
 
@@ -29,12 +29,12 @@ const ToDoItemForm: React.FC = () => {
   };
   return (
     <div style={TaskFormStyle}>
-      <Input
+      <input
         placeholder={"Please enter task name"}
         value={toDoListItem?.name ?? ""}
         onChange={handleTaskNameChange}
         style={TaskInputStyle}
-        inputProps={{ maxLength: 40 }}
+        maxLength={40}
       />
 
       <Button onClick={handleAddToDoListItemClick}>Add ToDo List item</Button>
