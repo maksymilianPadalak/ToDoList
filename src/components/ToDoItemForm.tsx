@@ -17,7 +17,8 @@ const ToDoItemForm: React.FC = () => {
   const dispatch = useAppDispatch();
   const [toDoListItem, setToDoListItem] = useState<ToDoItem>();
 
-  const handleAddToDoListItemClick = () => {
+  const handleAddToDoListItemClick = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (toDoListItem != null) {
       dispatch(addToDoListItem(toDoListItem));
       setToDoListItem(undefined);
@@ -28,17 +29,18 @@ const ToDoItemForm: React.FC = () => {
     setToDoListItem({ name: e.target.value });
   };
   return (
-    <div style={TaskFormStyle}>
+    <form style={TaskFormStyle} onSubmit={handleAddToDoListItemClick}>
       <input
         placeholder={"Please enter task name"}
         value={toDoListItem?.name ?? ""}
         onChange={handleTaskNameChange}
         style={TaskInputStyle}
         maxLength={40}
+        required
       />
 
-      <Button onClick={handleAddToDoListItemClick}>Add ToDo List item</Button>
-    </div>
+      <Button type="submit">Add ToDo List item</Button>
+    </form>
   );
 };
 
