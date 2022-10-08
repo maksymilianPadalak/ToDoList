@@ -37,6 +37,7 @@ const ToDoItemForm: React.FC = () => {
         value={toDoListItem?.name ?? ""}
         onChange={handleTaskNameChange}
         style={TaskInputStyle}
+        inputProps={{ maxLength: 40 }}
       />
 
       <Button onClick={handleAddToDoListItemClick}>Add ToDo List item</Button>
