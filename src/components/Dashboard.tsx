@@ -3,10 +3,10 @@ import { useAppSelector } from "../app/hooks";
 
 const Dashboard: React.FC = () => {
   const completedTasks = useAppSelector(
-    (state) => state.completedTasksCounter.value
+    (state) => state.tasksCounter.value.completed
   );
   const uncompletedTasks = useAppSelector(
-    (state) => state.uncompletedTasksCounter.value
+    (state) => state.tasksCounter.value.abandoned
   );
   return (
     <div>

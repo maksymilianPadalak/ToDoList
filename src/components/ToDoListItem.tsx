@@ -1,7 +1,9 @@
 import React from "react";
 import { useAppDispatch } from "../app/hooks";
-import { incrementedCompletedTasks } from "../features/tasksCounter/completedTasksCounterSlice";
-import { incrementedUncompletedTasks } from "../features/tasksCounter/uncompletedTasksCounterSlice";
+import {
+  incrementAbandonedTasks,
+  incrementCompletedTasks,
+} from "../features/tasksCounter/tasksCounterSlice";
 import { Button } from "@mui/material";
 import {
   finishedTask,
@@ -32,12 +34,12 @@ const ToListItem: React.FC<Props> = ({ toDoItem }) => {
 
   const handleCompleteTaskClick = () => {
     dispatch(finishedTask(toDoItem.uuid));
-    dispatch(incrementedCompletedTasks());
+    dispatch(incrementCompletedTasks());
   };
 
   const handleAbandonTask = () => {
     dispatch(finishedTask(toDoItem.uuid));
-    dispatch(incrementedUncompletedTasks());
+    dispatch(incrementAbandonedTasks());
   };
 
   return (

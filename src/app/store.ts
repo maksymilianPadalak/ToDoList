@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import completedTasksCounterReducer from "../features/tasksCounter/completedTasksCounterSlice";
-import uncompletedTasksCounterReducer from "../features/tasksCounter/uncompletedTasksCounterSlice";
+import tasksCounterReducer from "../features/tasksCounter/tasksCounterSlice";
 import toDoListItemsReducer from "../features/toDoList/toDoListSlice";
 
 export const store = configureStore({
   reducer: {
-    completedTasksCounter: completedTasksCounterReducer,
-    uncompletedTasksCounter: uncompletedTasksCounterReducer,
+    tasksCounter: tasksCounterReducer,
     toDoListItems: toDoListItemsReducer,
   },
 });
