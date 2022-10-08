@@ -1,0 +1,29 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+html {
+  font-family: Inter sans-serif;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+input {
+  text-align: center;
+}
+
+::placeholder {
+  text-align: center;
+}
