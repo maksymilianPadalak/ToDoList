@@ -9,21 +9,6 @@ import {
   ToDoListItemWithUuid,
 } from "../features/toDoList/toDoListSlice";
 
-const ToDoListItem: React.CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-};
-
-const ToDoListItemGridFragment: React.CSSProperties = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
-
-const ToDoListButtons: React.CSSProperties = {
-  marginInline: "10px",
-};
-
 interface Props {
   toDoItem: ToDoListItemWithUuid;
 }
@@ -43,18 +28,30 @@ const ToListItem: React.FC<Props> = ({ toDoItem }) => {
 
   return (
     <div>
-      <div style={ToDoListItem}>
-        <div style={ToDoListItemGridFragment}>
-          <h3>{toDoItem.name}</h3>
+      <div className={"row"}>
+        <div className={"col-sm-6 col-12 py-2 py-sm-0"}>
+          <h2 className={"text-break"}>{toDoItem.name}</h2>
         </div>
 
-        <div style={ToDoListItemGridFragment}>
-          <button onClick={handleCompleteTaskClick} style={ToDoListButtons}>
-            Complete task
-          </button>
-          <button onClick={handleAbandonTask} style={ToDoListButtons}>
-            Abandon task
-          </button>
+        <div
+          className={
+            "col-sm-6 col-12 d-flex flex-row justify-content-center align-items-center"
+          }
+        >
+          <div className={"col-6"}>
+            <button
+              className={"btn btn-success"}
+              onClick={handleCompleteTaskClick}
+            >
+              Complete task
+            </button>
+          </div>
+
+          <div className={"col-6"}>
+            <button className={"btn btn-danger"} onClick={handleAbandonTask}>
+              Abandon task
+            </button>
+          </div>
         </div>
       </div>
       <hr />
