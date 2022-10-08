@@ -2,16 +2,6 @@ import React, { useState } from "react";
 import { addToDoListItem, ToDoItem } from "../features/toDoList/toDoListSlice";
 import { useAppDispatch } from "../app/hooks";
 
-const TaskFormStyle: React.CSSProperties = {
-  width: "100%",
-  display: "flex",
-  justifyContent: "space-around",
-};
-
-const TaskInputStyle: React.CSSProperties = {
-  width: "50%",
-};
-
 const ToDoItemForm: React.FC = () => {
   const dispatch = useAppDispatch();
   const [toDoListItem, setToDoListItem] = useState<ToDoItem>();
@@ -28,17 +18,24 @@ const ToDoItemForm: React.FC = () => {
     setToDoListItem({ name: e.target.value });
   };
   return (
-    <form style={TaskFormStyle} onSubmit={handleAddToDoListItemClick}>
-      <input
-        placeholder={"Please enter task name"}
-        value={toDoListItem?.name ?? ""}
-        onChange={handleTaskNameChange}
-        style={TaskInputStyle}
-        maxLength={40}
-        required
-      />
+    <form
+      onSubmit={handleAddToDoListItemClick}
+      className={"row align-items-center my-5"}
+    >
+      <div className={"col-sm-8 col-md-9 col-12 py-3 py-sm-0"}>
+        <input
+          className={"w-100"}
+          placeholder={"Please enter task name"}
+          value={toDoListItem?.name ?? ""}
+          onChange={handleTaskNameChange}
+          maxLength={40}
+          required
+        />
+      </div>
 
-      <button type="submit">Add ToDo List item</button>
+      <div className={"col-sm-4 col-md-3 col-12"}>
+        <button type="submit">Add ToDo List item</button>
+      </div>
     </form>
   );
 };
