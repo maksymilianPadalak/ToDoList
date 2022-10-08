@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Button, Input } from "@mui/material";
-import {
-  addedToDoListItem,
-  ToDoItem,
-} from "../features/toDoList/toDoListSlice";
+import { addToDoListItem, ToDoItem } from "../features/toDoList/toDoListSlice";
 import { useAppDispatch } from "../app/hooks";
 
 const TaskFormStyle: React.CSSProperties = {
@@ -22,7 +19,7 @@ const ToDoItemForm: React.FC = () => {
 
   const handleAddToDoListItemClick = () => {
     if (toDoListItem != null) {
-      dispatch(addedToDoListItem(toDoListItem));
+      dispatch(addToDoListItem(toDoListItem));
       setToDoListItem(undefined);
     }
   };

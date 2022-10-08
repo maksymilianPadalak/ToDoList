@@ -21,15 +21,15 @@ const toDoListItemsSlice = createSlice({
   name: "completedTasksCounter",
   initialState,
   reducers: {
-    addedToDoListItem(state, action: PayloadAction<ToDoItem>) {
+    addToDoListItem(state, action: PayloadAction<ToDoItem>) {
       state.value.push({ ...action.payload, uuid: uuidv4() });
     },
-    finishedTask(state, action: PayloadAction<string>) {
+    finishTask(state, action: PayloadAction<string>) {
       state.value = state.value.filter((task) => task.uuid !== action.payload);
     },
   },
 });
 
-export const { addedToDoListItem, finishedTask } = toDoListItemsSlice.actions;
+export const { addToDoListItem, finishTask } = toDoListItemsSlice.actions;
 
 export default toDoListItemsSlice.reducer;

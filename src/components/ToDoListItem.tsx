@@ -6,7 +6,7 @@ import {
 } from "../features/tasksCounter/tasksCounterSlice";
 import { Button } from "@mui/material";
 import {
-  finishedTask,
+  finishTask,
   ToDoListItemWithUuid,
 } from "../features/toDoList/toDoListSlice";
 
@@ -33,12 +33,12 @@ const ToListItem: React.FC<Props> = ({ toDoItem }) => {
   const dispatch = useAppDispatch();
 
   const handleCompleteTaskClick = () => {
-    dispatch(finishedTask(toDoItem.uuid));
+    dispatch(finishTask(toDoItem.uuid));
     dispatch(incrementCompletedTasks());
   };
 
   const handleAbandonTask = () => {
-    dispatch(finishedTask(toDoItem.uuid));
+    dispatch(finishTask(toDoItem.uuid));
     dispatch(incrementAbandonedTasks());
   };
 
