@@ -4,7 +4,6 @@ import {
   incrementAbandonedTasks,
   incrementCompletedTasks,
 } from "../features/tasksCounter/tasksCounterSlice";
-import { Button } from "@mui/material";
 import {
   finishTask,
   ToDoListItemWithUuid,
@@ -50,22 +49,12 @@ const ToListItem: React.FC<Props> = ({ toDoItem }) => {
         </div>
 
         <div style={ToDoListItemGridFragment}>
-          <Button
-            variant={"contained"}
-            color={"success"}
-            onClick={handleCompleteTaskClick}
-            style={ToDoListButtons}
-          >
+          <button onClick={handleCompleteTaskClick} style={ToDoListButtons}>
             Complete task
-          </Button>
-          <Button
-            color={"error"}
-            variant={"contained"}
-            onClick={handleAbandonTask}
-            style={ToDoListButtons}
-          >
+          </button>
+          <button onClick={handleAbandonTask} style={ToDoListButtons}>
             Abandon task
-          </Button>
+          </button>
         </div>
       </div>
       <hr />

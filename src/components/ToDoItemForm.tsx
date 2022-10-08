@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
 import { addToDoListItem, ToDoItem } from "../features/toDoList/toDoListSlice";
 import { useAppDispatch } from "../app/hooks";
 
@@ -39,7 +38,7 @@ const ToDoItemForm: React.FC = () => {
         required
       />
 
-      <Button type="submit">Add ToDo List item</Button>
+      <button type="submit">Add ToDo List item</button>
     </form>
   );
 };
