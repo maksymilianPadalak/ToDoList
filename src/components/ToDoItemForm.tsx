@@ -22,7 +22,7 @@ const ToDoItemForm: React.FC = () => {
       onSubmit={handleAddToDoListItemClick}
       className={"row align-items-center my-5"}
     >
-      <div className={"col-sm-8 col-md-9 col-12 py-3 py-sm-0"}>
+      <div className={"col-sm-8 col-md-9 col-lg-10 col-12 py-3 py-sm-0"}>
         <input
           className={"w-100"}
           placeholder={"Please enter task name"}
@@ -33,8 +33,8 @@ const ToDoItemForm: React.FC = () => {
         />
       </div>
 
-      <div className={"col-sm-4 col-md-3 col-12"}>
-        <button type="submit">Add ToDo List item</button>
+      <div className={"col-sm-4 col-md-3 col-lg-2 col-12"}>
+        <button type="submit">Add task</button>
       </div>
     </form>
   );
