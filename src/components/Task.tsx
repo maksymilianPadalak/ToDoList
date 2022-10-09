@@ -4,10 +4,10 @@ import {
   incrementAbandonedTasks,
   incrementCompletedTasks,
 } from "../features/tasksCounter/tasksCounterSlice";
-import { finishTask, TasksWithUuid } from "../features/toDoList/toDoListSlice";
+import { finishTask, TaskWithUuid } from "../features/toDoList/toDoListSlice";
 
 interface Props {
-  task: TasksWithUuid;
+  task: TaskWithUuid;
 }
 
 const Task: React.FC<Props> = ({ task }) => {

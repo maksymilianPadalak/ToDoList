@@ -5,15 +5,15 @@ export interface Task {
   name: string;
 }
 
-export interface TasksWithUuid extends Task {
+export interface TaskWithUuid extends Task {
   uuid: string;
 }
 
-interface tasksState {
-  value: TasksWithUuid[];
+interface ToDoListState {
+  value: TaskWithUuid[];
 }
 
-const initialState: tasksState = {
+const initialState: ToDoListState = {
   value: [],
 };
 

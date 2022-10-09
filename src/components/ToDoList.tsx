@@ -4,13 +4,13 @@ import Task from "./Task";
 import NewTaskForm from "./NewTaskForm";
 
 const ToDoList: React.FC = () => {
-  const toDoListItems = useAppSelector((state) => state.toDoList.value);
+  const toDoList = useAppSelector((state) => state.toDoList.value);
 
   return (
     <div className={"w-100"}>
       <NewTaskForm />
       <div>
-        {toDoListItems.map((task) => (
+        {toDoList.map((task) => (
           <Task task={task} key={task.uuid} />
         ))}
       </div>
