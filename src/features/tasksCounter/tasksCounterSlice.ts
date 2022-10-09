@@ -16,7 +16,7 @@ const initialState: TasksCounterState = {
   },
 };
 
-const tasksSlice = createSlice({
+const tasksCounterSlice = createSlice({
   name: "tasksCounter",
   initialState,
   reducers: {
@@ -30,6 +30,6 @@ const tasksSlice = createSlice({
 });
 
 export const { incrementCompletedTasks, incrementAbandonedTasks } =
-  tasksSlice.actions;
+  tasksCounterSlice.actions;
 
-export default tasksSlice.reducer;
+export default tasksCounterSlice.reducer;
