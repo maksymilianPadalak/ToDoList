@@ -3,7 +3,7 @@ import Dashboard from "./components/Dashboard";
 import ToDoList from "./components/ToDoList";
 
 const App: React.FC = () => (
-  <div className={"w-100"}>
+  <div>
     <Dashboard />
     <ToDoList />
   </div>

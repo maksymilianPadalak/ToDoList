@@ -29,7 +29,11 @@ const ToListItem: React.FC<Props> = ({ toDoItem }) => {
   return (
     <div>
       <div className={"row"}>
-        <div className={"col-sm-6 col-12 py-2 py-sm-0"}>
+        <div
+          className={
+            "col-sm-6 col-12 py-2 py-sm-0 d-flex flex-row justify-content-center align-items-center"
+          }
+        >
           <h2 className={"text-break"}>{toDoItem.name}</h2>
         </div>
 
@@ -38,7 +42,7 @@ const ToListItem: React.FC<Props> = ({ toDoItem }) => {
             "col-sm-6 col-12 d-flex flex-row justify-content-center align-items-center"
           }
         >
-          <div className={"col-6"}>
+          <div className={"col-6 px-1"}>
             <button
               className={"btn btn-success"}
               onClick={handleCompleteTaskClick}
@@ -47,7 +51,7 @@ const ToListItem: React.FC<Props> = ({ toDoItem }) => {
             </button>
           </div>
 
-          <div className={"col-6"}>
+          <div className={"col-6 px-1"}>
             <button className={"btn btn-danger"} onClick={handleAbandonTask}>
               Abandon task
             </button>
