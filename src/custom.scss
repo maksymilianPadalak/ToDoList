@@ -27,3 +27,17 @@ input {
 ::placeholder {
   text-align: center;
 }
+
+@media (prefers-color-scheme: dark) {
+  html body {
+    background: #333;
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html body {
+    background: white;
+    color: #555;
+  }
+}
