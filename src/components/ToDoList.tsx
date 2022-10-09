@@ -1,17 +1,17 @@
 import React from "react";
 import { useAppSelector } from "../app/hooks";
-import ToDoListItem from "./ToDoListItem";
-import ToDoItemForm from "./ToDoItemForm";
+import Task from "./Task";
+import NewTaskForm from "./NewTaskForm";
 
 const ToDoList: React.FC = () => {
-  const toDoListItems = useAppSelector((state) => state.toDoListItems.value);
+  const toDoListItems = useAppSelector((state) => state.toDoList.value);
 
   return (
     <div className={"w-100"}>
-      <ToDoItemForm />
+      <NewTaskForm />
       <div>
-        {toDoListItems.map((item) => (
-          <ToDoListItem toDoItem={item} key={item.uuid} />
+        {toDoListItems.map((task) => (
+          <Task task={task} key={task.uuid} />
         ))}
       </div>
     </div>

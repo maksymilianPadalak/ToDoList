@@ -1,32 +1,32 @@
 import React, { useState } from "react";
-import { addToDoListItem, ToDoItem } from "../features/toDoList/toDoListSlice";
+import { addTask, Task } from "../features/toDoList/toDoListSlice";
 import { useAppDispatch } from "../app/hooks";
 
-const ToDoItemForm: React.FC = () => {
+const NewTaskForm: React.FC = () => {
   const dispatch = useAppDispatch();
-  const [toDoListItem, setToDoListItem] = useState<ToDoItem>();
+  const [task, setTask] = useState<Task>();
 
-  const handleAddToDoListItemClick = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleAddTaskClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (toDoListItem != null) {
-      dispatch(addToDoListItem(toDoListItem));
-      setToDoListItem(undefined);
+    if (task != null) {
+      dispatch(addTask(task));
+      setTask(undefined);
     }
   };
 
   const handleTaskNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setToDoListItem({ name: e.target.value });
+    setTask({ name: e.target.value });
   };
   return (
     <form
-      onSubmit={handleAddToDoListItemClick}
+      onSubmit={handleAddTaskClick}
       className={"row align-items-center my-5"}
     >
       <div className={"col-sm-8 col-md-9 col-lg-10 col-12 py-3 py-sm-0"}>
         <input
           className={"w-100"}
           placeholder={"Please enter task name"}
-          value={toDoListItem?.name ?? ""}
+          value={task?.name ?? ""}
           onChange={handleTaskNameChange}
           maxLength={40}
           required
@@ -40,4 +40,4 @@ const ToDoItemForm: React.FC = () => {
   );
 };
 
-export default ToDoItemForm;
+export default NewTaskForm;

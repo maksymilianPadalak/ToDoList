@@ -1,27 +1,27 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
-export interface ToDoItem {
+export interface Task {
   name: string;
 }
 
-export interface ToDoListItemWithUuid extends ToDoItem {
+export interface TasksWithUuid extends Task {
   uuid: string;
 }
 
-interface ToDoListItemsState {
-  value: ToDoListItemWithUuid[];
+interface tasksState {
+  value: TasksWithUuid[];
 }
 
-const initialState: ToDoListItemsState = {
+const initialState: tasksState = {
   value: [],
 };
 
-const toDoListItemsSlice = createSlice({
-  name: "toDoListItems",
+const toDoListSlice = createSlice({
+  name: "toDoList",
   initialState,
   reducers: {
-    addToDoListItem(state, action: PayloadAction<ToDoItem>) {
+    addTask(state, action: PayloadAction<Task>) {
       state.value.push({ ...action.payload, uuid: uuidv4() });
     },
     finishTask(state, action: PayloadAction<string>) {
@@ -30,6 +30,6 @@ const toDoListItemsSlice = createSlice({
   },
 });
 
-export const { addToDoListItem, finishTask } = toDoListItemsSlice.actions;
+export const { addTask, finishTask } = toDoListSlice.actions;
 
-export default toDoListItemsSlice.reducer;
+export default toDoListSlice.reducer;
