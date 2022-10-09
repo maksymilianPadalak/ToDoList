@@ -18,7 +18,7 @@ const initialState: ToDoListItemsState = {
 };
 
 const toDoListItemsSlice = createSlice({
-  name: "completedTasksCounter",
+  name: "toDoListItems",
   initialState,
   reducers: {
     addToDoListItem(state, action: PayloadAction<ToDoItem>) {
