@@ -2,16 +2,12 @@ import React from "react";
 import { useAppSelector } from "../app/hooks";
 
 const Dashboard: React.FC = () => {
-  const completedTasks = useAppSelector(
-    (state) => state.tasksCounter.value.completed
-  );
-  const abandonedTasks = useAppSelector(
-    (state) => state.tasksCounter.value.abandoned
-  );
+  const tasksCounter = useAppSelector((state) => state.tasksCounter.value);
+
   return (
     <div>
-      <h2>Number of completed tasks: {completedTasks}</h2>
-      <h2>Number of abandoned tasks: {abandonedTasks}</h2>
+      <h2>Number of completed tasks: {tasksCounter.completed}</h2>
+      <h2>Number of abandoned tasks: {tasksCounter.abandoned}</h2>
     </div>
   );
 };
